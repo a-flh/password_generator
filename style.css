@@ -1,7 +1,6 @@
 * {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.2rem;
   outline: none;
 }
 
@@ -9,9 +8,47 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  background: url(./bg.jpg) center/cover;
+  background: rgb(245, 250, 245);
+}
+
+.password-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin-bottom: 3rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  font-size: 1.2rem;
+}
+
+#target {
+  display: flex;
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+#target::after {
+  content: "";
+  position: absolute;
+  height: 2.8rem;
+  width: 5px;
+  background: black;
+  top: 0;
+  right: -6px;
+  animation: anim 0.8s linear infinite;
+}
+
+@keyframes anim {
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .app {
@@ -22,6 +59,8 @@ body {
   width: 90%;
   max-width: 600px;
   box-shadow: 3px 4px 10px 0px #a76666c2;
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
 }
 
 #password-output {
@@ -77,6 +116,7 @@ input[type="range"]::-webkit-slider-thumb:active {
   width: 30px;
   background: transparent;
   border: none;
+  font-size: 1.1rem;
 }
 
 .checkbox-container {
@@ -119,6 +159,7 @@ button {
   border-right: 3px solid yellow;
   transition: 0.2s;
   cursor: pointer;
+  font-size: 1.3rem;
 }
 
 button:hover {
@@ -131,4 +172,10 @@ button:hover {
 
 button:active {
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 770px) {
+  .password-title {
+    flex-direction: column;
+  }  
 }
